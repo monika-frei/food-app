@@ -1,0 +1,89 @@
+@import "../../../scss/variables";
+
+.wrapper {
+  width: 95%;
+  padding: 1rem;
+  border: 2px solid $tertiary-color;
+  border-radius: 1rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #fff;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: $fontSize-m;
+  font-weight: $semi-bold;
+}
+
+.button {
+  margin-top: 3rem;
+  width: 12rem;
+  font-size: $fontSize-s;
+  align-self: center;
+  position: relative;
+  border: none;
+  border-radius: 3rem;
+  box-shadow: 0 6px darken($tertiary-color, 10%);
+
+  &:hover {
+    box-shadow: 0 4px darken($tertiary-color, 10%);
+    top: 3px;
+  }
+  &:active {
+    box-shadow: 0 0 darken($tertiary-color, 10%);
+    top: 6px;
+  }
+}
+
+.buttons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  & > button {
+    margin-left: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  & > button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.listButtons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  .button {
+    margin: 0 1rem;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .wrapper {
+    width: 70%;
+    padding: 3rem 5rem;
+    margin: 3rem 0;
+  }
+  .heading {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: $fontSize-l;
+  }
+  .buttons {
+    top: 2rem;
+    right: 2rem;
+    button {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+  .button {
+    width: 15rem;
+    font-size: $fontSize-m;
+  }
+}

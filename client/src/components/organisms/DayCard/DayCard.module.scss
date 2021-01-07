@@ -1,0 +1,74 @@
+@import "../../../scss/mixins";
+@import "../../../scss/variables";
+
+.container {
+  @include flex-vertical-center;
+  justify-content: flex-start;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: lighten($secondary-color, 25%);
+    z-index: -2;
+    border-radius: 1rem;
+    transform: skew(1deg, -1deg) translateX(-2%);
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid $secondary-color;
+    border-radius: 1rem;
+    z-index: -1;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 2.5rem;
+}
+
+.heading {
+  width: 100%;
+  font-size: $fontSize-m;
+  color: $darkfont;
+  font-weight: $semi-bold;
+  text-transform: uppercase;
+  align-self: center;
+}
+
+.date {
+  color: $darkfont;
+  font-weight: $light;
+  font-size: $fontSize-xs;
+}
+.buttons {
+  align-self: flex-end;
+}
+.button {
+  margin-left: 1rem;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .heading {
+    font-size: $fontSize-l;
+  }
+  .date {
+    font-size: $fontSize-s;
+  }
+}

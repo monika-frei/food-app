@@ -1,0 +1,68 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.heading {
+  text-align: center;
+}
+
+.header {
+  position: relative;
+  .buttons {
+    position: absolute;
+    top: 5px;
+    right: 1rem;
+  }
+  .buttons > button {
+    margin: 1rem;
+  }
+}
+
+.planWrapper {
+  padding: 1rem;
+}
+
+.mealPlanWrapper {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  border-top: 1px solid black;
+
+  & > h2 {
+    align-self: flex-start;
+    font-weight: $light;
+  }
+}
+.quickAdd {
+  bottom: 20vh;
+}
+.recepiesContainer {
+  @include mobile-recepies-card-grid;
+  & > * {
+    margin: 0 auto;
+  }
+}
+
+.delete {
+  top: 50%;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .mealPlanWrapper {
+    & > h2 {
+      font-size: $fontSize-m;
+    }
+  }
+  .recepiesContainer {
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+  .quickAdd {
+    left: 50%;
+    bottom: 10rem;
+    transform: translate(-50%, -50%);
+  }
+}

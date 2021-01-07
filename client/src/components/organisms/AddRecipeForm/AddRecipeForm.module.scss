@@ -1,0 +1,237 @@
+@import "../../../scss/variables";
+
+.form {
+  padding: 0 3rem 5rem 0;
+
+  & > input,
+  select,
+  textarea {
+    font-size: $fontSize-xs;
+  }
+  & > textarea {
+    width: 100%;
+    margin-top: 1rem;
+    height: 10rem;
+    padding: 1.5rem;
+    resize: none;
+    border-radius: 2rem;
+    border: 1px solid darken($primary-color, 10%);
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 12rem;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+.label {
+  background-color: transparent;
+  color: $darkfont;
+  text-align: center;
+  border-radius: 2rem;
+  border: 1px solid darken($primary-color, 10%);
+  width: 15rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.selectedMeal {
+  background-color: $primary-color;
+  color: #fff;
+}
+.container {
+  border-top: 1px solid lighten($primary-color, 10%);
+  padding: 20px 0;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+
+  input[name="amount"],
+  select[name="unit"] {
+    margin-left: 1rem;
+  }
+  label[for="unit"] {
+    margin-top: 1rem;
+  }
+  select[name="unit"] {
+    padding: 1rem;
+    border: 1px solid darken($primary-color, 10%);
+    border-radius: 2rem;
+    appearance: none;
+    cursor: pointer;
+  }
+}
+
+.paragraphLabel {
+  font-size: $fontSize-s;
+  font-weight: $semi-bold;
+  margin-bottom: 0.5rem;
+}
+.titleInput {
+  width: 25rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid darken($primary-color, 10%);
+  border-radius: 2rem;
+  align-self: center;
+  margin: 1rem 0;
+}
+
+.hidden {
+  position: absolute;
+  left: -100vw;
+}
+
+.ingredientWrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  & > div {
+    margin: 0 20px 0 0;
+  }
+
+  & > select {
+    background-color: transparent;
+    width: 70px;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid darken($primary-color, 10%);
+    border-radius: 20px;
+  }
+  .button {
+    align-self: flex-end;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+.ingredientsList {
+  color: $darkfont;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+input[type="number"] {
+  border-radius: 20px;
+  border: 1px solid darken($primary-color, 10%);
+  padding: 10px;
+  width: 70px;
+  -moz-appearance: textfield;
+}
+
+.preparationWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border-top: 1px solid lighten($primary-color, 10%);
+  padding: 20px 0;
+
+  .button {
+    margin-top: 10px;
+    align-self: flex-end;
+  }
+  & > ul > li {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: $fontSize-xs;
+    & > p {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
+
+      & > span {
+        margin-right: 2rem;
+      }
+
+      .button {
+        margin: 0 0.5rem;
+        align-self: flex-end;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+.inputStep {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70px;
+  background-color: lighten($primary-color, 10%);
+  text-align: center;
+  margin-left: 10px;
+}
+textarea[name="content"],
+textarea[name="addInfo"] {
+  width: 25rem;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid darken($primary-color, 10%);
+  border-radius: 2rem;
+  resize: none;
+}
+
+.extraWrapper {
+  border-top: 1px solid lighten($primary-color, 10%);
+  width: 90%;
+  padding: 20px 0;
+
+  input[type="text"] {
+    border-radius: 20px;
+    border: 1px solid darken($primary-color, 10%);
+    padding: 10px;
+    width: 100px;
+  }
+  .rowWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    div {
+      margin-right: 20px;
+    }
+  }
+}
+
+.warningWrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.buttonClose {
+  margin-left: 30px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  input,
+  select,
+  textarea {
+    font-size: $fontSize-s;
+  }
+  .wrapper {
+    padding: 2rem 0;
+  }
+  .paragraphLabel {
+    font-size: $fontSize-m;
+  }
+  .ingredientsList {
+    grid-template-columns: 1fr 1fr;
+  }
+  .preparationWrapper {
+    li {
+      font-size: $fontSize-s;
+    }
+  }
+  textarea[name="content"],
+  textarea[name="addInfo"] {
+    width: 35rem;
+  }
+}

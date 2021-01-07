@@ -1,0 +1,24 @@
+@import "../../../scss/variables";
+
+.logo {
+  width: 7rem;
+  height: 7rem;
+  background-color: transparent;
+  background-image: url("../../../assets/logo2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .logo {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+@media (min-width: $breakpoint-desktop) {
+  .logo {
+    width: 12rem;
+    height: 12rem;
+  }
+}

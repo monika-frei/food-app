@@ -1,0 +1,45 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.wrapper {
+  min-height: 80vh;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.heading {
+  @include mobile-page-heading;
+}
+
+.buttonWrapper {
+  @include button-icon-position-mobile;
+}
+
+.button {
+  @include button-hover-move-down;
+  &:hover {
+    background-color: darken($secondary-color, 5%);
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .wrapper {
+    padding-top: 3rem;
+  }
+
+  .heading {
+    font-size: $fontSize-xl;
+  }
+  .buttonWrapper {
+    @include button-icon-position-tablet;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+  .buttonWrapper {
+    @include button-icon-position-desktop;
+  }
+}

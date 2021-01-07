@@ -1,0 +1,18 @@
+@import "../../../scss/variables";
+
+.button {
+  width: 15rem;
+  height: 60px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .button {
+    width: 20rem;
+  }
+}

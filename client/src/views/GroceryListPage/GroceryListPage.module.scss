@@ -1,0 +1,92 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+
+.wrapper {
+  @include flex-vertical-center;
+  min-height: 85vh;
+
+  & > h3 {
+    color: $darkfont;
+    font-weight: $semi-bold;
+    font-size: $fontSize-s;
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+.buttons {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 2rem;
+}
+
+.button {
+  width: 10rem;
+  height: 5rem;
+  font-size: $fontSize-s;
+  margin: 0 1rem;
+  position: relative;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 6px darken($tertiary-color, 10%);
+
+  &:hover {
+    box-shadow: 0 4px darken($tertiary-color, 10%);
+    top: 3px;
+  }
+  &:active {
+    box-shadow: 0 0 darken($tertiary-color, 10%);
+    top: 6px;
+  }
+}
+.classActiveBtn {
+  box-shadow: none;
+  background-color: darken($tertiary-color, 10%);
+
+  &:hover {
+    box-shadow: none;
+    top: 0;
+  }
+  &:active {
+    box-shadow: none;
+    top: 0;
+  }
+}
+
+.buttonGenerate {
+  font-size: $fontSize-s;
+  margin-top: 3rem;
+  border-radius: 0.5rem;
+  position: relative;
+  color: darken($tertiary-color, 30%);
+  border: 2px solid darken($tertiary-color, 10%);
+  &:hover {
+    background-color: darken($tertiary-color, 10%);
+    color: #fff;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .buttons {
+    margin-top: 5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .button {
+    width: 15rem;
+    margin-left: 20px;
+  }
+  .buttonGenerate {
+    font-size: $fontSize-m;
+    margin-top: 5rem;
+  }
+}
+@media (min-width: $breakpoint-desktop) {
+  .button {
+    font-size: $fontSize-m;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../scss/variables";
+.listItem {
+  list-style-type: none;
+  background-color: lighten($primary-color, 10%);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  font-size: $fontSize-xs;
+  .button {
+    margin: 0 auto;
+    align-self: center;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .listItem {
+    font-size: $fontSize-s;
+  }
+}

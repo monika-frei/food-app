@@ -1,0 +1,67 @@
+@import "../../../scss/variables";
+
+.recepies {
+  padding: 3rem;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: white;
+  border: 1px solid $secondary-color;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0.5rem 0.5rem 1rem $grey300;
+}
+
+.closeIcon {
+  background-image: url("../../../assets/close.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  margin-top: 2rem;
+  bottom: 2rem;
+  right: 50%;
+}
+
+.search {
+  background-color: $grey100;
+  border: none;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.list {
+  width: 100%;
+  padding: 2rem 0 5rem 0;
+  overflow: auto;
+}
+
+.listItem {
+  list-style-type: none;
+  width: 100%;
+  padding: 5px;
+  border-top: 1px solid $grey100;
+  border-top: 1px solid $grey100;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .recepies {
+    padding: 30px;
+    width: 720px;
+    min-height: 500px;
+    box-shadow: 5px 5px 10px $grey300;
+  }
+  .search {
+    background-color: $grey100;
+    width: 100%;
+    border: none;
+    width: 300px;
+    font-size: $fontSize-s;
+  }
+}

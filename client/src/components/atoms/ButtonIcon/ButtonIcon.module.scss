@@ -1,0 +1,58 @@
+@import "../../../scss/variables";
+
+.button {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.icon {
+  position: relative;
+}
+
+div.line:first-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+}
+div.line:last-of-type {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 3rem;
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .button {
+    width: 6rem;
+    height: 6rem;
+  }
+  div.line:first-of-type {
+    width: 4rem;
+  }
+  div.line:last-of-type {
+    height: 4rem;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .button {
+    width: 7rem;
+    height: 7rem;
+  }
+  div.line:first-of-type {
+    width: 5rem;
+  }
+  div.line:last-of-type {
+    height: 5rem;
+  }
+}

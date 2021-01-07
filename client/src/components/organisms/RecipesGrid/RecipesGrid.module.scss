@@ -1,0 +1,15 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.wrapper {
+  @include mobile-recepies-card-grid;
+  & > * {
+    margin: 0 auto;
+  }
+  min-height: 28rem;
+}
+.wrapperSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

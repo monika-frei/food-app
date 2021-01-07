@@ -1,0 +1,87 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.container {
+  @include mobile-welcome-form-border-wrapper;
+  height: 70%;
+  transition: all 0.8s;
+  transition-timing-function: cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  position: relative;
+  z-index: 1;
+}
+.wrapper {
+  @include flex-vertical-center;
+  padding: 3rem;
+  // transition: opacity 0.3s ease-in-out;
+}
+
+.heading {
+  font-size: $fontSize-l;
+  margin: 2rem 0;
+  align-self: flex-start;
+}
+.paragraph {
+  font-size: $fontSize-s;
+  color: $darkfont;
+  align-self: flex-start;
+}
+.button {
+  align-self: flex-end;
+  margin: 8rem 0 0.5rem 0;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .heading {
+    font-size: $fontSize-xl;
+  }
+
+  .paragraph {
+    font-size: $fontSize-l;
+    color: $grey400;
+  }
+
+  .button {
+    position: relative;
+    &:hover {
+      box-shadow: 0 0 5px 1px darken($primary-color, 30%);
+      background-color: lighten($primary-color, 2%);
+    }
+  }
+
+  .containerOpen {
+    transform: scale(0.5, 1);
+  }
+
+  .wrapperOpen {
+    opacity: 0;
+  }
+
+  .imageOpen {
+    transform: translate(300vw, 0);
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .container {
+    @include desktop-welcome-form-border-wrapper;
+  }
+  .image {
+    width: 800px;
+    height: 100%;
+    background-image: url("../../assets/welcomePhoto.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 100px 10px 10px 100px;
+    box-shadow: -15px 0 20px -5px $grey400;
+  }
+}

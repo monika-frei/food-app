@@ -1,0 +1,92 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.container {
+  @include mobile-welcome-form-border-wrapper;
+}
+
+.formTitle {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.formWrapper {
+  margin-top: 2rem;
+  padding: 1rem;
+  @include flex-vertical-center;
+  & > div {
+    margin: 1rem 0;
+    @include flex-vertical-center;
+  }
+}
+
+.label {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  font-weight: $semi-bold;
+}
+.input {
+  width: 25rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid darken($tertiary-color, 10%);
+  border-radius: 2rem;
+  background-color: $grey100;
+}
+
+.button,
+.link {
+  margin-top: 1rem;
+}
+.link {
+  font-size: $fontSize-xs;
+  text-decoration: underline;
+}
+
+.button {
+  @include button-hover-move-down;
+  border: 2px solid darken($secondary-color, 10%);
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(212, 177, 177, 0.9);
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .formWrapper {
+    margin-top: 4rem;
+  }
+  .input {
+    width: 30rem;
+  }
+  .button,
+  .link {
+    margin-top: 1.5rem;
+  }
+  .link {
+    font-size: $fontSize-s;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .container {
+    @include desktop-welcome-form-border-wrapper;
+    width: 45vw;
+    height: 75vh;
+  }
+  .input {
+    width: 30rem;
+    background-color: transparent;
+  }
+  .button {
+    border: none;
+  }
+}
