@@ -6,7 +6,7 @@ import Button from "../../components/atoms/Button/Button";
 import styles from "./AuthPage.module.scss";
 import { GlobalContext } from "../../context/GlobalContext";
 import PageType from "../../providers/PageType";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import PopUpInfo from "../../components/molecules/PopUpInfo/PopUpInfo";
 
 const transition = { duration: 0.4, ease: [0.43, 0.13, 0.23, 0.96] };
@@ -15,6 +15,7 @@ const AuthPage = () => {
   const [inputEmail, setInputEmail] = useState("");
   const [inputPassword, setInputPassword] = useState("");
   const [isPopUp, setIsPopUp] = useState(false);
+  const history = useHistory();
 
   const {
     handleSignUp,
@@ -39,6 +40,10 @@ const AuthPage = () => {
     } else {
       setInputPassword(value);
     }
+  };
+  const onClickPopUp = () => {
+    setIsPopUp(!isPopUp);
+    history.push("/login");
   };
   return (
     <PageType
@@ -112,8 +117,7 @@ const AuthPage = () => {
           {isPopUp && (
             <PopUpInfo
               text="Your account has been created successfuly, now you can log in"
-              onClick={setIsPopUp(!isPopUp)}
-              isPopUp={isPopUp}
+              onClick={onClickPopUp}
             />
           )}
         </WelcomeTemplate>
