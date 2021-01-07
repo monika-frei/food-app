@@ -39,7 +39,6 @@ const RecipesContextProvider = (props) => {
     axios
       .get(`https://fodd-app-server.herokuapp.com/recipes/${id}`, config)
       .then((res) => {
-        console.log(res);
         setRecipe(res.data);
       })
       .catch((err) => {
@@ -81,9 +80,7 @@ const RecipesContextProvider = (props) => {
   const sendRecipe = (formData) => {
     if (id) {
       updateRecipe(formData);
-      console.log(id);
     } else {
-      console.log(id);
       createRecipe(formData);
     }
   };

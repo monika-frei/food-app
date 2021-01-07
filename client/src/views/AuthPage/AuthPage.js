@@ -112,7 +112,7 @@ const AuthPage = () => {
           {isPopUp && (
             <PopUpInfo
               text="Your account has been created successfuly, now you can log in"
-              setIsPopUp={setIsPopUp}
+              onClick={setIsPopUp(!isPopUp)}
               isPopUp={isPopUp}
             />
           )}

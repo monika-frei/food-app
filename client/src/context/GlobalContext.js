@@ -96,7 +96,6 @@ const GlobalContextProvider = (props) => {
   }, [planState.data.plan]);
 
   useEffect(() => {
-    console.log("pobieranie");
     doFetchRecipes({
       url: recipesUrl,
       token: authState?.data?.token,
