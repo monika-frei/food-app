@@ -56,6 +56,7 @@ const PlanContextProvider = (props) => {
       .post("https://fodd-app-server.herokuapp.com/plan", dayPlan, config)
       .then((res) => {
         console.log(res);
+        getPlan();
       })
       .catch((err) => {
         console.log(err);
@@ -83,6 +84,7 @@ const PlanContextProvider = (props) => {
       )
       .then((res) => {
         console.log(res);
+        getPlan();
       })
       .catch((err) => {
         console.log(err);

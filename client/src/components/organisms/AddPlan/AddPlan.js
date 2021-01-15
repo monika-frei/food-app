@@ -79,7 +79,7 @@ const AddPlan = (props) => {
     const formatDate = momentAdapter(date, "YYYY-MM-DD").formatDate;
     sendPlan(formatDate, day, savedRecipes);
     toggle();
-    getPlan();
+    // getPlan();
   };
 
   //closing pop-up recipes
