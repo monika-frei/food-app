@@ -32,6 +32,7 @@ exports.grocerylist_post = (req, res, next) => {
   groceryList
     .save()
     .then((result) => {
+      //czy potrzebujesz tego wszystkiego? object masz już w requeście, po co kopiować go na response? wg mnie wystarczyłby res.sendStatus(200) podobnie we wszystkich pozostałych przypadkach
       console.log(result);
       res.status(201).json({
         message: "Grocery list saved successfuly",
@@ -57,11 +58,14 @@ exports.recipes_get_single_recipe = (req, res, next) => {
       if (doc) {
         res.send(doc);
       } else {
+        // 404 to brak ścieżki, a nie brak rekordu pod ścieżką
+        // myślę, że wybrałabym inny status błędu
         res.status(404).json({ message: "No valid ID" });
       }
     })
     .catch((error) => {
       console.log(error);
+      //res.sendStatus(500) powinno automatycznie ci wylogować błąd jaki jest przy 500 - tak samo w innych przypadkach
       res.status(500).json({ error });
     });
 };

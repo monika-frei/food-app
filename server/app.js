@@ -19,6 +19,7 @@ mongoose.connect(
 
 app.use(morgan("dev"));
 app.use(cors());
+//tu bym wrzuciła app.use(checkAuth) żeby nie robić tego per endpoint ale dla wszytkich
 app.use("/uploads", express.static("uploads"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

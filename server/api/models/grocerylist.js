@@ -1,13 +1,13 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const itemSchema = newSchema({
+const itemSchema = new Schema({
   _id: Schema.Types.ObjectId,
   title: String,
   amount: Number,
   unit: String,
   id: String,
-});
+}); //coś się tu crashuje
 
 const grocerylistSchema = new Schema({
   groceryList: [itemSchema],
