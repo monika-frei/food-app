@@ -1,0 +1,15 @@
+## Yes:
+1. Css per component
+2. Context provider per view ładnie porządkuje
+4. Animations per component
+5. Funkcyjne komponenty
+## Nope:
+1. Struktura plików:
+- atoms, molekules = chaos, lepiej używać nazw z sensem
+- template powinien być reużywalny
+- lepiej oddzielać komponenty reużywalne od view-specific
+- na global stuff odłożyłabym osobny folder np lib i w niego wsadziła scss, utils, żeby trzymać osobno od logiki apki
+- nie rozumiem po co jest folder constants
+
+2. Dużo porzuconych dependecies, lepiej użyć lintera np. eslint
+3. Storybook w dependencies a go nie ma

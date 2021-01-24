@@ -10,7 +10,7 @@ const PopUpInfo = ({ text, onClick }) => {
       onClick,
     }),
     []
-  );
+  ); //tutaj useMemo jest niepotrzebne, nic się tutaj nie przerenderuje i tak
   return (
     <div className={styles.container}>
       <h3>{text}</h3>

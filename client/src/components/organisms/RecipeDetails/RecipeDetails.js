@@ -27,7 +27,7 @@ const RecipeDetails = ({
   const imageUrl = arrayBufferToBase64(buffer);
   const recipeImage = imageUrl
     ? `url(data:image/jpeg;base64,${imageUrl})`
-    : `url(${imageBg})`;
+    : `url(${imageBg})`; // ok, why?
 
   const handleOpenPopUpAddItem = useCallback(() => {
     setOpenAdd(!isOpenAdd);
@@ -63,8 +63,8 @@ const RecipeDetails = ({
             <ul>
               Good for:
               {recipe.category.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
+              <li key={item}>{item}</li>
+            ))}
             </ul>
           </section>
         </div>

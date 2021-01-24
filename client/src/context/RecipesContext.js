@@ -34,10 +34,13 @@ const RecipesContextProvider = (props) => {
       "Content-Type": "multipart/form-data",
     },
   };
-
+  // jeśli komenda jest powtarzalna można by ją wyekstrahować jako osobną funkcję np
+  // makeAPIRequest(rodzaj requestu, path, body/query) => response => obsługa błędu
+  // a potem tylko wołasz makeAPiReq('get', path, { id }) i masz oneliner
+  // poza tym nie musisz copiować kodu, autoryzacji etc.
   const getSingleRecipe = async (id) => {
     axios
-      .get(`https://fodd-app-server.herokuapp.com/recipes/${id}`, config)
+      .get(`https://fodd-app-server.herokuapp.com/recipes/${id}`, config) // podałabym nazwę API w .env albo jako zmienną, tak samo /recipes jako zmienną
       .then((res) => {
         setRecipe(res.data);
       })
