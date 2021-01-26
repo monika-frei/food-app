@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Redirect } from "react-router";
-import { routes } from "./routes";
+import { routes } from "./utilities/routes";
 import AuthPage from "./views/AuthPage/AuthPage";
 import WelcomePage from "./views/WelcomePage/WelcomePage";
 import PlanPage from "./views/PlanPage/PlanPage";

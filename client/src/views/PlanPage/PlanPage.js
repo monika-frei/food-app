@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import PageTemplate from "../../templates/PageTemplate/PageTemplate";
-import WeekPlan from "../../components/organisms/WeekPlan/WeekPlan";
+import WeekPlan from "./WeekPlan/WeekPlan";
 import styles from "./PlanPage.module.scss";
-import AddPlan from "../../components/organisms/AddPlan/AddPlan";
-import ButtonIcon from "../../components/atoms/ButtonIcon/ButtonIcon";
+import AddPlan from "../../shared/AddPlan/AddPlan";
+import ButtonIcon from "../../shared/ButtonIcon/ButtonIcon";
 import ToggleOpen from "../../providers/ToggleOpen";
 import { PlanContext } from "../../context/PlanContext";
 import { GlobalContext } from "../../context/GlobalContext";

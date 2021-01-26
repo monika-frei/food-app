@@ -1,0 +1,52 @@
+@import "../../utilities/scss/variables";
+
+.wrapper {
+  width: 90%;
+  border: 1px solid lighten($secondary-color, 20%);
+  background-color: #fff;
+  margin: 5px 0;
+  border-radius: 10px;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: lighten($secondary-color, 45%);
+  border-radius: 1rem;
+  h3 {
+    font-size: $fontSize-s;
+  }
+}
+
+.list {
+  padding: 5px 10px;
+}
+.listItem {
+  list-style-type: none;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  & > * {
+    font-size: $fontSize-xs;
+  }
+}
+
+.buttonDelete {
+  margin-right: 10px;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .heading {
+    h3 {
+      font-size: $fontSize-m;
+    }
+  }
+  .listItem {
+    & > * {
+      font-size: $fontSize-s;
+    }
+  }
+}

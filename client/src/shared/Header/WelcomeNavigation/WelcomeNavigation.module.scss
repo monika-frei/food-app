@@ -1,0 +1,44 @@
+@import "../../../utilities/scss/variables";
+@import "../../../utilities/scss/mixins";
+
+.container {
+  @include flex-horizontal;
+  padding: 20px 70px;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+.nav {
+  @include flex-horizontal;
+  list-style-type: none;
+}
+
+.link {
+  padding: 0 45px;
+  color: $secondary-color;
+  font-weight: $semi-bold;
+}
+.customLogo {
+  width: 7rem;
+  height: 7rem;
+  background-color: transparent;
+  background-image: url("../../../utilities/assets/logo2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media (min-width: $breakpoint-tablet) {
+  .logo {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+@media (min-width: $breakpoint-desktop) {
+  .logo {
+    width: 12rem;
+    height: 12rem;
+  }
+}

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styles from "./WelcomePage.module.scss";
 import cx from "classnames";
 import WelcomeTemplate from "../../templates/WelcomeTemplate/WelcomeTemplate";
-import Heading from "../../components/atoms/Heading/Heading";
-import Paragraph from "../../components/atoms/Paragraph/Paragraph";
-import Button from "../../components/atoms/Button/Button";
+import Heading from "../../shared/Heading/Heading";
+import Paragraph from "../../shared/Paragraph/Paragraph";
+import Button from "../../shared/Button/Button";
 import { Link } from "react-router-dom";
-import { routes } from "../../routes";
+import { routes } from "../../utilities/routes/index";
 import { AnimatePresence, motion } from "framer-motion";
 
 const WelcomePage = () => {

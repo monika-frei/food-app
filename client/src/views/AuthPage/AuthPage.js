@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
-import { motion } from "framer-motion";
-import WelcomeTemplate from "../../templates/WelcomeTemplate/WelcomeTemplate";
-import LoadingSpinner from "../../components/atoms/LoadingSpinner/LoadingSpinner";
-import Button from "../../components/atoms/Button/Button";
 import styles from "./AuthPage.module.scss";
-import { GlobalContext } from "../../context/GlobalContext";
-import PageType from "../../providers/PageType";
 import { Link, Redirect, useHistory } from "react-router-dom";
-import PopUpInfo from "../../components/molecules/PopUpInfo/PopUpInfo";
+import { motion } from "framer-motion";
+import { GlobalContext } from "../../context/GlobalContext";
+import WelcomeTemplate from "../../templates/WelcomeTemplate/WelcomeTemplate";
+import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
+import Button from "../../shared/Button/Button";
+import PageType from "../../providers/PageType";
+import PopUpInfo from "../../shared/PopUpInfo/PopUpInfo";
 
 const transition = { duration: 0.4, ease: [0.43, 0.13, 0.23, 0.96] };
 
@@ -23,7 +23,6 @@ const AuthPage = () => {
     userLoggedIn,
     authLoading,
     recipesLoading,
-    planLoading,
     authMessage,
   } = useContext(GlobalContext);
 
@@ -31,7 +30,7 @@ const AuthPage = () => {
     if (authMessage === "User created") {
       setIsPopUp(!isPopUp);
     }
-  }, [authMessage]);
+  }, [authMessage, isPopUp]);
 
   const handleChange = (e) => {
     const value = e.target.value;

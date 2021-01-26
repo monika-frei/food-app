@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState, useCallback } from "react";
 import styles from "./DetailedDayPlan.module.scss";
 import ToggleOpen from "../../providers/ToggleOpen";
 import PageTemplate from "../../templates/PageTemplate/PageTemplate";
-import DayPlanDetails from "../../components/organisms/DayPlanDetails/DayPlanDetails";
+import DayPlanDetails from "./DayPlanDetails/DayPlanDetails";
 import { PlanContext } from "../../context/PlanContext";
 import { useHistory, useLocation, Redirect } from "react-router";
-import AddPlan from "../../components/organisms/AddPlan/AddPlan";
-import PopUpDelete from "../../components/molecules/PopUpDelete/PopUpDelete";
-import QuickAdd from "../../components/molecules/QuickAdd/QuickAdd";
+import AddPlan from "../../shared/AddPlan/AddPlan";
+import PopUpDelete from "../../shared/PopUpDelete/PopUpDelete";
+import QuickAdd from "../../shared/QuickAdd/QuickAdd";
 import PlanContextProvider from "../../context/PlanContext";
 import { GlobalContext } from "../../context/GlobalContext";
 
@@ -37,7 +37,13 @@ const DetailedDayPlan = () => {
   }, [isOpenDelete]);
 
   useEffect(() => {
-    getPlanById(id);
+    let isCancelled = false;
+    if (!isCancelled) {
+      getPlanById(id);
+    }
+    return () => {
+      isCancelled = true;
+    };
   }, [refresh, getPlanById, id]);
 
   const handleQuickAdd = useCallback(

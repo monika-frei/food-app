@@ -1,4 +1,5 @@
-import React, { createContext, useState, useEffect, useCallback } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 import moment from "moment";
 import { useAuthUser, useFetchData } from "../hooks";

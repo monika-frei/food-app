@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./RecipePage.module.scss";
 import PageTemplate from "../../templates/PageTemplate/PageTemplate";
-import RecipeDetails from "../../components/organisms/RecipeDetails/RecipeDetails";
+import RecipeDetails from "./RecipeDetails/RecipeDetails";
 import ToggleOpen from "../../providers/ToggleOpen";
-import LoadingSpinner from "../../components/atoms/LoadingSpinner/LoadingSpinner";
-import PopUpInfo from "../../components/molecules/PopUpInfo/PopUpInfo";
-import { routes } from "../../routes/index";
+import LoadingSpinner from "../../shared/LoadingSpinner/LoadingSpinner";
+import PopUpInfo from "../../shared/PopUpInfo/PopUpInfo";
+import { routes } from "../../utilities/routes/index";
 import { RecipesContext } from "../../context/RecipesContext";
 import { useLocation, useHistory, Redirect } from "react-router";
 import { GlobalContext } from "../../context/GlobalContext";
@@ -24,7 +25,13 @@ const RecipePage = () => {
   );
 
   useEffect(() => {
-    getSingleRecipe(id);
+    let isCancelled = false;
+    if (!isCancelled) {
+      getSingleRecipe(id);
+    }
+    return () => {
+      isCancelled = true;
+    };
   }, []);
 
   useEffect(() => {

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./FormAddTemplate.module.scss";
-import Heading from "../../components/atoms/Heading/Heading";
+import Heading from "../../shared/Heading/Heading";
 import PageType from "../../providers/PageType";
-import ButtonIconSmall from "../../components/atoms/ButtonIconSmall/ButtonIconSmall";
+import ButtonIconSmall from "../../shared/ButtonIconSmall/ButtonIconSmall";
 import { pageType } from "../../constans/index";
 import cx from "classnames";
 

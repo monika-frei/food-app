@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PageTemplate.module.scss";
 import cx from "classnames";
-import UserPageTemplate from "../UserPageTemplate/UserPageTemplate";
+import UserPageTemplate from "./UserPageTemplate/UserPageTemplate";
 
 const PageTemplate = ({ children, border, bgColorLight }) => {
   const wrapperClass = cx(styles.wrapper, border, bgColorLight);

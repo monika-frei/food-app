@@ -1,0 +1,94 @@
+@import "../../../../../utilities/scss/variables";
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons > button {
+  margin: 0 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid $darkfont;
+  border-radius: 50%;
+}
+
+.item {
+  padding: 0.2rem 0;
+  border-bottom: 1px solid $darkfont;
+  display: grid;
+  grid-template-columns: 3rem auto 12rem;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.wrapperInput {
+  display: flex;
+  .input {
+    border: none;
+    background-color: lighten($tertiary-color, 10%);
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    padding: 0.2rem;
+    width: 3rem;
+  }
+}
+.title,
+.amount,
+.unit {
+  color: $darkfont;
+  font-size: $fontSize-xs;
+}
+
+.title {
+  list-style-type: none;
+}
+
+.amount {
+  justify-self: end;
+}
+
+.input {
+  width: 5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: lighten($tertiary-color, 10%);
+  font-size: $fontSize-xs;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .buttons > button {
+    width: 2rem;
+    height: 2rem;
+  }
+  .item {
+    padding: 0.5rem 0;
+    grid-template-columns: 5rem auto 15rem;
+  }
+  .title,
+  .amount,
+  .unit {
+    color: $darkfont;
+    font-size: $fontSize-s;
+  }
+  .circle {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .wrapperInput {
+    display: flex;
+    .input {
+      border: none;
+      background-color: lighten($tertiary-color, 10%);
+      border-radius: 5px;
+      margin-left: 5px;
+      padding: 5px;
+      width: 50px;
+    }
+  }
+}

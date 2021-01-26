@@ -1,4 +1,4 @@
-@import "../../scss/variables";
+@import "../../utilities/scss/variables";
 
 .container {
   position: absolute;
@@ -18,7 +18,7 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-image: url("../../assets/welcomePhoto.jpg");
+    background-image: url("../../utilities/assets/welcomePhoto.jpg");
     background-position: 25% 75%;
     background-size: cover;
     background-repeat: no-repeat;
