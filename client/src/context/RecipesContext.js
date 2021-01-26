@@ -1,13 +1,11 @@
-import React, { createContext, useState, useContext, useEffect } from "react";
+import React, { createContext, useState, useContext } from "react";
 import { useLocation } from "react-router";
 import axios from "axios";
 import { GlobalContext } from "./GlobalContext";
-import { useFetchData } from "../hooks/index";
 
 export const RecipesContext = createContext();
 
 const RecipesContextProvider = (props) => {
-  const [status, setStatus] = useState("LOADING");
   const [error, setError] = useState("");
   const [recipe, setRecipe] = useState({
     title: "",
@@ -19,7 +17,7 @@ const RecipesContextProvider = (props) => {
     info: "",
     recipeImage: "",
   });
-  const { token, getRecipes } = useContext(GlobalContext);
+  const { token } = useContext(GlobalContext);
   const location = useLocation();
   const id = location ? location.pathname.split("/")[2] : "";
 
@@ -101,7 +99,6 @@ const RecipesContextProvider = (props) => {
   return (
     <RecipesContext.Provider
       value={{
-        status,
         getSingleRecipe,
         recipe,
         createRecipe,

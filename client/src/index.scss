@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap");
-@import "./scss/variables";
+@import "./utilities/scss/variables";
 
 *,
 *::before,
@@ -100,22 +100,22 @@ li {
 }
 
 .buttonDelete {
-  background-image: url("./assets/close.png");
+  background-image: url("./utilities/assets/close.png");
 }
 .buttonAdd {
-  background-image: url("./assets/add.png");
+  background-image: url("./utilities/assets/add.png");
 }
 .buttonEdit {
-  background-image: url("./assets/edit-button.png");
+  background-image: url("./utilities/assets/edit-button.png");
 }
 .buttonPrint {
-  background-image: url("./assets/printer.png");
+  background-image: url("./utilities/assets/printer.png");
 }
 .buttonEmail {
-  background-image: url("./assets/email.png");
+  background-image: url("./utilities/assets/email.png");
 }
 .buttonChecked {
-  background-image: url("./assets/checked.png");
+  background-image: url("./utilities/assets/checked.png");
 }
 
 .btn20 {

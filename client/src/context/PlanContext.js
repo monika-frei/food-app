@@ -27,7 +27,7 @@ const PlanContextProvider = (props) => {
       snacks: [],
     },
   });
-  const { token, userId } = useContext(GlobalContext);
+  const { token } = useContext(GlobalContext);
 
   const config = {
     headers: {
@@ -132,6 +132,8 @@ const PlanContextProvider = (props) => {
       const [planInDb] = plan.filter((item) => {
         if (item.date === date) {
           return item;
+        } else {
+          return null;
         }
       });
       const planToUpdate = {

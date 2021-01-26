@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext, useCallback } from "react";
 import { Redirect } from "react-router";
 import PageTemplate from "../../templates/PageTemplate/PageTemplate";
 import { GlobalContext } from "../../context/GlobalContext";
 import { RecipesContext } from "../../context/RecipesContext";
-import GroceryListTemplate from "../../templates/GroceryListTemplate/GroceryListTemplate";
-import uuid from "../../utils/uuid";
+import GroceryListTemplate from "./GroceryListTemplate/GroceryListTemplate";
+import uuid from "../../utilities/utils/uuid";
 
 const GroceryListPage = () => {
   const [activePopUp, setActivePopUp] = useState(false);
@@ -21,7 +22,7 @@ const GroceryListPage = () => {
   // getting all recipes from plan
   useEffect(() => {
     plannedRecipes.map((item) => {
-      getSingleRecipe(item.recipeId);
+      return getSingleRecipe(item.recipeId);
     });
   }, [plannedRecipes]);
 
@@ -64,7 +65,9 @@ const GroceryListPage = () => {
     }
     plan.map((item) => {
       if (daysArray.includes(item.date)) {
-        allRecipes = [...allRecipes, ...item.recipes];
+        return (allRecipes = [...allRecipes, ...item.recipes]);
+      } else {
+        return null;
       }
     });
     let plannedRecipes = [];
@@ -139,6 +142,8 @@ const GroceryListPage = () => {
       const [count] = recipesToList.filter((plannedRecipe) => {
         if (plannedRecipe.recipeId === item._id) {
           return plannedRecipe.count;
+        } else {
+          return null;
         }
       });
       if (count) {
@@ -152,7 +157,9 @@ const GroceryListPage = () => {
             unit: ingredient.unit,
           };
         });
-        allIngredients = [...allIngredients, ...recipeIngredients];
+        return (allIngredients = [...allIngredients, ...recipeIngredients]);
+      } else {
+        return null;
       }
     });
     setIngredients(allIngredients);

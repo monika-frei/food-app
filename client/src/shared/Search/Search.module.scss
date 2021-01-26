@@ -1,0 +1,16 @@
+@import "../../utilities/scss/variables";
+
+.input {
+  min-width: 25rem;
+  font-size: $fontSize-xs;
+  display: block;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .input {
+    font-size: $fontSize-m;
+  }
+}

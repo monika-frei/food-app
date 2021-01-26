@@ -1,14 +1,14 @@
 import React, { useState, useContext, useMemo, useCallback } from "react";
 import styles from "./RecipesPage.module.scss";
 import PageTemplate from "../../templates/PageTemplate/PageTemplate";
-import RecipesGrid from "../../components/organisms/RecipesGrid/RecipesGrid";
+import RecipesGrid from "./RecipesGrid/RecipesGrid";
 import ToggleOpen from "../../providers/ToggleOpen";
-import QuickAdd from "../../components/molecules/QuickAdd/QuickAdd";
-import AddRecipe from "../../components/organisms/AddRecipe/AddRecipe";
+import QuickAdd from "../../shared/QuickAdd/QuickAdd";
+import AddRecipe from "../../shared/AddRecipe/AddRecipe";
 import PlanContextProvider from "../../context/PlanContext";
 import { GlobalContext } from "../../context/GlobalContext";
 import { Redirect } from "react-router";
-import RecipesPageHeader from "../../components/organisms/RecipesPageHeader/RecipesPageHeader";
+import RecipesPageHeader from "./RecipesPageHeader/RecipesPageHeader";
 
 const RecipesPage = () => {
   const [selectedMeal, setSelectedMeal] = useState("all");
@@ -16,7 +16,6 @@ const RecipesPage = () => {
   const [inputContent, setInputContent] = useState("");
   const [isOpen, setOpen] = useState(false);
   const [activeRecipe, setActiveRecipe] = useState({});
-  const [refresh, setRefresh] = useState(false);
   const { userLoggedIn } = useContext(GlobalContext);
 
   const handleInputChange = (e) => {
@@ -77,11 +76,7 @@ const RecipesPage = () => {
             </PlanContextProvider>
           )}
           {classOpen === "activeForm" && (
-            <AddRecipe
-              classOpen={classOpen}
-              toggle={toggle}
-              setRefresh={setRefresh}
-            />
+            <AddRecipe classOpen={classOpen} toggle={toggle} />
           )}
         </PageTemplate>
       )}

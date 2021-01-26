@@ -1,4 +1,4 @@
-@import "../../scss/variables";
+@import "../../utilities/scss/variables";
 
 .container {
   position: fixed;
@@ -39,7 +39,7 @@
   right: 5%;
   height: 8rem;
   width: 5rem;
-  background-image: url("../../assets/carrotGreen.png");
+  background-image: url("../../utilities/assets/carrotGreen.png");
   background-size: contain;
   transform: rotate(30deg);
 }
@@ -51,7 +51,7 @@
   left: 5%;
   height: 8rem;
   width: 5rem;
-  background-image: url("../../assets/carrotOrange.png");
+  background-image: url("../../utilities/assets/carrotOrange.png");
   background-size: contain;
   transform: rotate(300deg);
 }

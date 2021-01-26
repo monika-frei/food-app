@@ -1,0 +1,27 @@
+@import "../../../../utilities/scss/variables";
+@import "../../../../utilities/scss/mixins";
+
+.button {
+  width: 180px;
+  height: 70px;
+  color: $darkfont;
+  font-size: $fontSize-m;
+  font-weight: $bold;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  cursor: pointer;
+  @include button-hover-move-down;
+}
+
+.bgPlan {
+  background-color: $secondary-color;
+}
+
+.bgRecepies {
+  background-color: $primary-color;
+}
+
+.bgGrocerylist {
+  background-color: $tertiary-color;
+}
